@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -16,11 +17,18 @@ public class SerachProductActivity extends AppCompatActivity {
 
     String getCode,getName,getPrice;
 
+    DatabaseHelper helper;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_serach_product);
+
+        helper=new DatabaseHelper(this);
+        helper.getWritableDatabase();
+
         ed1=(EditText) findViewById(R.id.procode);
         ed2=(EditText) findViewById(R.id.prna);
         ed3=(EditText) findViewById(R.id.pr);
@@ -35,7 +43,24 @@ public class SerachProductActivity extends AppCompatActivity {
                 getName=ed2.getText().toString();
                 getPrice=ed2.getText().toString();
 
-                Toast.makeText(getApplicationContext(),getCode, Toast.LENGTH_SHORT).show();
+                Cursor c= helper.searchData(getCode);
+
+                if(c.getCount()==0)
+                {
+                    ed2.setText("");
+                    ed3.setText("");
+                    Toast.makeText(getApplicationContext(), "Invalid Code", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    while (c.moveToNext())
+                    {
+                        getName=c.getString(2);
+                        getPrice=c.getString(3);
+                    }
+                    ed2.setText(getName);
+                    ed3.setText(getPrice);
+                }
             }
         });
 

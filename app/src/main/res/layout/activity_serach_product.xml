@@ -1,6 +1,7 @@
 <LinearLayout android:layout_height="match_parent"
     android:layout_width="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/productcode"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <TextView
@@ -10,11 +11,15 @@
         android:layout_margin="10dp"/>
     <EditText
         android:layout_width="match_parent"
+        android:inputType="number"
         android:layout_height="wrap_content"
         android:id="@+id/procode"
         android:layout_margin="10dp"/>
     <androidx.appcompat.widget.AppCompatButton
         android:layout_width="match_parent"
+        android:background="@drawable/productbutton"
+        android:textColor="#ffffff"
+
         android:layout_height="wrap_content"
         android:text="Submit"
         android:id="@+id/submit"
@@ -43,6 +48,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Back To menu"
+        android:textColor="#ffffff"
+        android:background="@drawable/productbutton"
         android:id="@+id/ba"
         android:layout_margin="10dp"/>
 </LinearLayout>

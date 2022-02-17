@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/hp/AndroidStudioProjects/ProductAppMZC/app/src/main/res/drawable/productbutton.xml" value="0.1" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/ProductAppMZC/app/src/main/res/drawable/productcode.xml" value="0.1" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/ProductAppMZC/app/src/main/res/drawable/productpage.xml" value="0.1" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/ProductAppMZC/app/src/main/res/layout/activity_addproduct.xml" value="0.10144927536231885" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/ProductAppMZC/app/src/main/res/layout/activity_main.xml" value="0.10144927536231885" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/ProductAppMZC/app/src/main/res/layout/activity_serach_product.xml" value="0.1" />
